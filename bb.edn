@@ -1,0 +1,14 @@
+{:deps {io.github.borkdude/quickblog
+        {:git/sha "74b1faff8b1e39079c66d82ec2a1e7e6f5dcc89b"}}
+ :tasks
+ {:requires ([quickblog.cli :as cli])
+  :init (def opts {:blog-author "Peter Hofmann"
+                   :blog-title "forms & lines / blog"
+                   :blog-description "A blog about the intersection between FORM logic, diagrammatics/semiotics, design and computation."
+                   :out-dir "public"
+                   :blog-root "https://blog.formsandlines.eu/"
+                   :twitter-handle "diagramaniac"
+                   :about-link "https://formsandlines.eu"})
+
+  quickblog {:doc "Start blogging quickly! Run `bb quickblog help` for details."
+             :task (cli/dispatch opts)}}}
